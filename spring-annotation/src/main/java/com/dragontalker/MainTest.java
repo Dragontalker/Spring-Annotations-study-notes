@@ -1,7 +1,6 @@
 package com.dragontalker;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.dragontalker.bean.Person;
 import com.dragontalker.config.MainConfig;
@@ -15,6 +14,11 @@ public class MainTest {
 		
 		Person person = context.getBean("person", Person.class);
 		System.out.println(person);
+		
+		String[] namesForType = context.getBeanNamesForType(Person.class);
+		for (String name: namesForType) {
+			System.out.println(name);
+		}
 		
 		context.close();
 	}
