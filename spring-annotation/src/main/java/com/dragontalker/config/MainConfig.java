@@ -8,8 +8,8 @@ import com.dragontalker.bean.Person;
 @Configuration
 public class MainConfig {
 
-	@Bean
-	public Person person() {
+	@Bean("person")
+	public Person person01() {
 		return new Person("lisi", 20);
 	}
 }
